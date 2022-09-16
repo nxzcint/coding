@@ -6,7 +6,14 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = credentials('Secret_access_key')
 
     }
+    
+    
     stages {
+            stage('git clone') {
+            steps {
+                sh " git clone "
+            }
+        }
         stage('create stack') {
             steps {
                 sh " aws cloudformation create-stack --stack-name duihua-cloudfront --template-body file://CloudFront.yml --region 'us-east-2'"
