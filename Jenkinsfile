@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('create stack') {
             steps {
-                sh " aws cloudformation create-stack --stack-name duihua-cloudfront --template-body file://CloudFront.yml --region 'us-east-2'"
+                sh " aws cloudformation create-stack --stack-name duihua-cloudfront --region 'us-east-2'"
             }
         }
     }
