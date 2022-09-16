@@ -9,9 +9,9 @@ pipeline {
     
     
     stages {
-            stage('git clone') {
+            stage('git pull') {
             steps {
-                sh " git clone https://github.com/manaralolasi/coding.git "
+                sh " git pull https://github.com/manaralolasi/coding.git "
             }
         }
         stage('create stack') {
