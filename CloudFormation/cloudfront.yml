@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Cloudfront-Pojects-DuiHua
+Resources:
+  DuiHua:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        DefaultRootObject: ''
+        Origins:
+        - Id: Custom Origin
+          DomainName: 
+          CustomOriginConfig:
+            OriginProtocolPolicy: match-viewer
+        DefaultCacheBehavior:
+          TargetOriginId: Custom Origin
+          ForwardedValues:
+            QueryString: true
+          ViewerProtocolPolicy: allow-all
+        CacheBehaviors:
+        - TargetOriginId: Custom Origin
+          ForwardedValues:
+            QueryString: false
+          ViewerProtocolPolicy: allow-all
+          MinTTL: 500
+          PathPattern: '*.jpg'
+        Comment: Sample multi-origin CloudFront distribution created using CloudFormation.
+        Enabled: true
+Outputs:
+  DistributionId:
+    Description: CloudFront Distribution Id
+    Value: !Ref 'DuiHua'
