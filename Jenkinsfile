@@ -11,7 +11,7 @@ pipeline {
     stages {
             stage('git clone') {
             steps {
-                sh " git clone "
+                sh " git clone https://github.com/manaralolasi/coding.git "
             }
         }
         stage('create stack') {
