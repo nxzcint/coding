@@ -5,10 +5,10 @@ pipeline {
 	environment {
 		AWS_ACCESS_KEY_ID     = credentials('Access_key_ID')
   		AWS_SECRET_ACCESS_KEY = credentials('Secret_access_key')
-		AWS_S3_BUCKET = 'book22'
+		AWS_S3_BUCKET = 'duihua'
 		 ARTIFACT_NAME = "DuiHua-0.0.1-SNAPSHOT.war"
-		AWS_EB_APP_NAME = 'mmmmmmm'
-        AWS_EB_ENVIRONMENT_NAME = 'Mmmmmmm-env'
+		AWS_EB_APP_NAME = 'duihua'
+        AWS_EB_ENVIRONMENT_NAME = 'duihua-env1'
         AWS_EB_APP_VERSION = "${BUILD_ID}"
 	}
 
